@@ -4,7 +4,7 @@
 SELECT У.ГРУППА, AVG(date_part('year', AGE(Л.ДАТА_РОЖДЕНИЯ)))::integer AS "Средний возраст" FROM Н_УЧЕНИКИ У 
 JOIN Н_ЛЮДИ Л ON У.ЧЛВК_ИД = Л.ИД 
 GROUP BY У.ГРУППА HAVING AVG(date_part('year', AGE(Л.ДАТА_РОЖДЕНИЯ)))::integer = ( 
-SELECT MAX(date_part('year', AGE(Л.ДАТА_РОЖДЕНИЯ)))::integer FROM Н_УЧЕНИКИ У 
- 	JOIN Н_ЛЮДИ Л ON У.ЧЛВК_ИД = Л.ИД 
- 	WHERE У.ГРУППА = '1100'
+    SELECT MAX(date_part('year', AGE(Л.ДАТА_РОЖДЕНИЯ)))::integer FROM Н_УЧЕНИКИ У 
+    JOIN Н_ЛЮДИ Л ON У.ЧЛВК_ИД = Л.ИД 
+    WHERE У.ГРУППА = '1100'
 ); 
